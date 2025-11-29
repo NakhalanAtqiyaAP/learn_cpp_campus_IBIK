@@ -39,9 +39,9 @@ int main()
     ifstream MyFile;
     MyFile.open("example.txt");
     string text[1000];
-    while(){
-      // getline(MyFile, text)
-    }
+    // while(){
+    //  getline(MyFile, text)
+    // }
     cout<<text;
     MyFile.close();
   return 0;
