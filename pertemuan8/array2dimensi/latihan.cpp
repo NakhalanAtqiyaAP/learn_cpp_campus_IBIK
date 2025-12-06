@@ -22,6 +22,7 @@ int main()
   cin>>bil[i][n];
    }
   }
+  
   for (int i = 0; i < input_1; i++)
   {
     for (int n = 0; n < input_2; n++)
