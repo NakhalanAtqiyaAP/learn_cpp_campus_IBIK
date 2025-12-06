@@ -63,7 +63,7 @@ int main()
 
   vector<TransaksiItem> daftar_transaksi(banyak_transaksi);
   
-//loop 
+//loop input
   for (int i = 0; i < banyak_transaksi; i++)
   {
     cout<<"Input Jenis Ke-"<<i + 1<<endl;
