@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Konversi suhu
 int konversi_suhu(char jenis, char target, int jumlah){
     float result = 0;
     if(jenis == 'C'){
