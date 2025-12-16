@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-  char kalimat[255], hasil[255];
-  int panjang = 0, index = 0;
+  char kalimat[255];
+  int panjang = 0;
   cout<<"Masukan sebuah kalimat :";
   cin.getline(kalimat, 255);
 
@@ -16,8 +16,7 @@ int main()
 
     for (int i = panjang - 1 ; i >= 0 ; i--)
     {
-        hasil[index] = kalimat[i];
-    
+        cout<<kalimat[i];
     }
     
     
