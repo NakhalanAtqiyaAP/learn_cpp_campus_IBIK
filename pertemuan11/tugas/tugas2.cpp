@@ -19,7 +19,7 @@ int main()
         cout<<kalimat[i];
     }
     
-    
+    cout<<endl;
 
   return 0;
 }
