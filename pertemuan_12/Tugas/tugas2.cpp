@@ -36,10 +36,27 @@ int main()
     {"The Strangers", "Albert Camus", 140, 2016}
   };
 
+cout<<"\n=== Selamat Datang Di Perpustakaan Online ===";
+cout<<"\n\nList Buku :"<<endl;
+
+
+for (const auto &item : listBuku)
+{
+    cout<<"Nama Buku        : "<<item.nama_buku<<endl;
+    cout<<"Penulis          : "<<item.penulis<<endl;
+    cout<<"Jumlah Halaman   : "<<item.jum_halaman<<endl;
+    cout<<"Tahun Terbit     : "<<item.tahun_terbit<<endl<<endl;
+}
   do
   {
-   cout<<"Mau cari buku apa? :";
-   getline(cin,nama_buku);
+
+    
+
+
+
+   cout<<"\n\nMau cari buku apa? :";
+   //ws untuk membuang whitespace
+   getline(cin>> ws,nama_buku);
    
    hasil_pencarian = cariBuku(nama_buku, listBuku);
 
@@ -56,7 +73,10 @@ int main()
    
    cout<<"\nMau cari lagi? (y/n) : ";
    cin>>option;
-  } while (option == 'y' || 'Y');
+
+   //agar tidak bug karena pakai getline 
+   cin.ignore(1000, '\n');
+  } while (option == 'y' || option == 'Y');
   
   
 
