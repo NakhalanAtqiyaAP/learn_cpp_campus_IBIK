@@ -27,7 +27,8 @@ int main()
 {
 
   string nama_buku;
-  char option;
+  char options;
+  string command;
   Buku hasil_pencarian;
 
   vector<Buku> listBuku ={
@@ -47,40 +48,77 @@ for (const auto &item : listBuku)
     cout<<"Jumlah Halaman   : "<<item.jum_halaman<<endl;
     cout<<"Tahun Terbit     : "<<item.tahun_terbit<<endl<<endl;
 }
-  do
-  {
 
+    cout<<"\n === Command === "<<endl;
+    cout<<"- Ketik 'cb' untuk cari buku"<<endl;
+    cout<<"- Ketik 'list' untuk menampilkan list buku"<<endl;
+    cout<<"- Ketik 'exit' untuk keluar program"<<endl;
+
+do
+{
+   cout<<"\nMasukan sebuah command : ";
+   cin>>command;
+
+if (command == "cb")
+    {
+    do{
+        cout<<"\n\nMau cari buku apa? :";
+        //ws untuk membuang whitespace
+        getline(cin>> ws,nama_buku);
+        
+        hasil_pencarian = cariBuku(nama_buku, listBuku);
+
+        if (hasil_pencarian.jum_halaman == 0)
+        {
+            cout<<"Nama buku tersebut tidak ada, pastikan input buku sesuai list";
+        }else{
+            cout<<"\n === Buku Ditemukan ==="<<endl;
+            cout<<"Nama Buku        : "<<hasil_pencarian.nama_buku<<endl;
+            cout<<"Penulis          : "<<hasil_pencarian.penulis<<endl;
+            cout<<"Jumlah Halaman   : "<<hasil_pencarian.jum_halaman<<endl;
+            cout<<"Tahun Terbit     : "<<hasil_pencarian.tahun_terbit<<endl;
+        }
+            cout<<"\nMau cari lagi? (y/n) : ";
+        cin>>options;
+
+        //agar tidak bug karena pakai getline 
+        cin.ignore(1000, '\n');
+
+        
+    } while (options == 'y' || options == 'Y'); 
+    }
+
+else if (command == "list")
+    {
+    for (const auto &item : listBuku)
+        {
+            cout<<"Nama Buku        : "<<item.nama_buku<<endl;
+            cout<<"Penulis          : "<<item.penulis<<endl;
+            cout<<"Jumlah Halaman   : "<<item.jum_halaman<<endl;
+            cout<<"Tahun Terbit     : "<<item.tahun_terbit<<endl<<endl;
+        }
+    }
+
+else if (command == "exit"){
+    break;    
+}
+else{
+    cout<<"Command tidak dikenal, harap masukan command sesuai list command"<<endl;
+}
+
+if (command != "exit")
+{
+    cout<<"Mau lanjut atau tidak? (y/n): ";
+    cin>>options;
+}
+
+
+ cin.ignore(1000, '\n');
+} while (options == 'y' || options == 'Y');
+
+cout<<"Program Selesai. Terima Kasih telah memakai perpustakaan online.";
     
 
-
-
-   cout<<"\n\nMau cari buku apa? :";
-   //ws untuk membuang whitespace
-   getline(cin>> ws,nama_buku);
-   
-   hasil_pencarian = cariBuku(nama_buku, listBuku);
-
-   if (hasil_pencarian.jum_halaman == 0)
-   {
-    cout<<"Nama buku tersebut tidak ada, pastikan input buku sesuai list";
-   }else{
-    cout<<"\n === Buku Ditemukan ==="<<endl;
-    cout<<"Nama Buku        : "<<hasil_pencarian.nama_buku<<endl;
-    cout<<"Penulis          : "<<hasil_pencarian.penulis<<endl;
-    cout<<"Jumlah Halaman   : "<<hasil_pencarian.jum_halaman<<endl;
-    cout<<"Tahun Terbit     : "<<hasil_pencarian.tahun_terbit<<endl;
-   }
-   
-   cout<<"\nMau cari lagi? (y/n) : ";
-   cin>>option;
-
-   //agar tidak bug karena pakai getline 
-   cin.ignore(1000, '\n');
-  } while (option == 'y' || option == 'Y');
-  
-  
-
-
-
+    
   return 0;
 }
