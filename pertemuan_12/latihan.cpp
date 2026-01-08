@@ -38,6 +38,5 @@ int main() {
 	cout << "Nama Buku: " << buku2.NamaBuku << endl;
 	cout << "Jumlah Lembar: " << buku2.lembar << endl;
 	cout << "Nama Penulis: " << buku2.Penulis << endl;
-	
-	return 0;
 }
+	return 0;
