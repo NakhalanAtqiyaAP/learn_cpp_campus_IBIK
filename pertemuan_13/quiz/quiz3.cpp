@@ -15,7 +15,7 @@ int umr(Pegawai pgw){
     }else{
         cout<<"Pegawai diatas UMR"<<endl;
     }
-    
+    return pgw.gaji;
 }
 
 int main()
