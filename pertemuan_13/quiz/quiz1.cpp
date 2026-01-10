@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main()
@@ -8,7 +9,8 @@ int main()
     {"Maya", "252310021"},
     {"Andi", "252310023"}
     };
-    cout<<"Nama   NPM"<<endl;
+    cout<<left<<setw(10)<<"Nama";
+    cout<<"NPM"<<endl;
     for (int i = 0; i < 3; i++)
     {
         
